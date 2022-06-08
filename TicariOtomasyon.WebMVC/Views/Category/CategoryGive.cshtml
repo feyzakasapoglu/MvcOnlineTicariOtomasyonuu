@@ -1,0 +1,19 @@
+﻿@model TicariOtomasyon.Entites.Model.Category
+@{
+    ViewData["Title"] = "CategoryGive";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br/>
+<h1>Category Update</h1>
+<br/>
+@using (Html.BeginForm("CategoryUpdate", "Category", FormMethod.Post)) 
+  {
+<div class="form-group">
+    @Html.LabelFor(x => x.CategoryName)
+    @Html.TextBoxFor(x => x.CategoryName, new  {@class="form-control" })
+    @Html.HiddenFor(x=>x.CategoryID)
+</div>
+
+<button class="btn btn-warning"> Update </button>
+
+  }

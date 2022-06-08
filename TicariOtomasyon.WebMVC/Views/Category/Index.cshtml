@@ -1,0 +1,34 @@
+﻿@using TicariOtomasyon.Entites.Model
+@model List<Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+
+
+    <tr>
+        <th>ID</th>
+        <th>Category Name </th>
+        <th>Delete </th>
+        <th>Update </th>
+       
+    </tr>
+
+    @foreach (var c in Model)
+    {
+<tr>
+    <td>
+        @c.CategoryID
+    </td>
+    <td>
+        @c.CategoryName
+    </td>
+    <td> <a href="/Category/CategoryDelete/@c.CategoryID" class="btn btn-danger">Delete</a></td>
+    <td> <a href="/Category/CategoryGive/@c.CategoryID" class="btn btn-success">Update</a></td>
+</tr>
+    }
+</table>
+<a href="/Category/CategoryAdd" class="btn btn-primary"> Add Category</a>
+
